@@ -1,9 +1,10 @@
-import { Container, Text } from "@nextui-org/react";
+import Layout from "@/components/Layout";
+import { Text } from "@nextui-org/react";
 
 export default function Home() {
   return (
-    <Container>
+    <Layout>
       <Text h1>NextUI</Text>
-    </Container>
+    </Layout>
   );
 }
