@@ -136,26 +136,30 @@ const collapseItems = [
 export default function Navigation() {
   return (
     <header>
-      <Navbar variant="floating">
-        <Navbar.Brand css={{ gap: "$6" }}>
+      <Navbar
+        maxWidth="lg"
+        variant="floating"
+        containerCss={{ "@xs": { margin: "$0 !important" }, gap: "$6" }}
+      >
+        <Navbar.Content gap="$6">
           <Navbar.Toggle />
-          <Link href="/">
-            <Text span b size={"$3xl"}>
-              Logo
-            </Text>
-          </Link>
-        </Navbar.Brand>
-        <Navbar.Content>
-          <Input
-            css={{ "@sm": { minWidth: "500px" } }}
-            status="primary"
-            color="primary"
-            size="lg"
-            height="max-content"
-            clearable
-            contentLeft={<Search />}
-          />
+          <Navbar.Brand>
+            <Link href="/">
+              <Text span b size={"$3xl"}>
+                Logo
+              </Text>
+            </Link>
+          </Navbar.Brand>
         </Navbar.Content>
+        <Input
+          css={{ "@sm": { minWidth: "500px" } }}
+          status="primary"
+          color="primary"
+          size="lg"
+          height="max-content"
+          clearable
+          contentLeft={<Search />}
+        />
         <Navbar.Content gap="$6">
           <Button
             flat
@@ -172,7 +176,14 @@ export default function Navigation() {
             icon={<Cart />}
           />
         </Navbar.Content>
-        <Navbar.Collapse>
+        <Navbar.Collapse
+          css={{
+            top: 82,
+            "@xs": { top: 88 },
+            width: 300,
+            ul: { background: "none !important" },
+          }}
+        >
           {collapseItems.map((i) => {
             return (
               <Navbar.CollapseItem key={i.id}>

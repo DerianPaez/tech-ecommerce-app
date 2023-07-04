@@ -5,7 +5,9 @@ export default function Layout({ children }) {
   return (
     <div>
       <Navigation />
-      <Container as="main">{children}</Container>
+      <Container lg as="main">
+        {children}
+      </Container>
     </div>
   );
 }
