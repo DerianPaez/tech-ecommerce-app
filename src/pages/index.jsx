@@ -1,10 +1,15 @@
 import Layout from "@/components/Layout";
-import { Text } from "@nextui-org/react";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
     <Layout>
-      <Text h1>NextUI</Text>
+      <Hero
+        title="El Estado oferta 800 plazas fijas de informático"
+        fullHeight
+        imgContain
+        background="./images/theming-gradient.svg"
+      />
     </Layout>
   );
 }

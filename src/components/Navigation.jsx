@@ -137,9 +137,13 @@ export default function Navigation() {
   return (
     <header>
       <Navbar
-        maxWidth="lg"
+        maxWidth="md"
         variant="floating"
-        containerCss={{ "@xs": { margin: "$0 !important" }, gap: "$6" }}
+        css={{ zIndex: "400" }}
+        containerCss={{
+          "@xs": { margin: "$0 !important" },
+          gap: "$6",
+        }}
       >
         <Navbar.Content gap="$6">
           <Navbar.Toggle />
@@ -181,7 +185,12 @@ export default function Navigation() {
             top: 82,
             "@xs": { top: 88 },
             width: 300,
-            ul: { background: "none !important" },
+            ul: {
+              background: "none",
+              backdropFilter: "none",
+              height: "100%",
+              zIndex: 100000,
+            },
           }}
         >
           {collapseItems.map((i) => {
